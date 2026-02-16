@@ -22,8 +22,7 @@ const openModal = () => {
     return;
   }
 
-  modal.classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
+  modal.showModal();
   window.setTimeout(() => {
     modalPanel?.focus();
   }, 0);
@@ -34,8 +33,7 @@ const closeModal = () => {
     return;
   }
 
-  modal.classList.add('hidden');
-  document.body.style.overflow = '';
+  modal.close();
 };
 
 openButtons.forEach((button) => {
@@ -46,8 +44,13 @@ closeButtons.forEach((button) => {
   button.addEventListener('click', closeModal);
 });
 
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+modal?.addEventListener('cancel', (event) => {
+  event.preventDefault();
+  closeModal();
+});
+
+modal?.addEventListener('click', (event) => {
+  if (event.target === modal) {
     closeModal();
   }
 });
