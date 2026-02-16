@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Hero Image Placeholder</title>
+  <desc id="desc">Replace this with your hero/banner image.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1352" height="852" rx="28" fill="#111827" stroke="#475569" stroke-width="5" stroke-dasharray="18 12"/>
+  <text x="700" y="430" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="68" font-weight="700">HERO IMAGE PLACEHOLDER</text>
+  <text x="700" y="505" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="34">Replace with your preferred landing image</text>
+</svg>
