@@ -43,15 +43,6 @@
   margin-top: 0.3rem;
 }
 
-.feature-chip {
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 0.85rem;
-  background: rgba(255, 255, 255, 0.04);
-  padding: 0.65rem 0.8rem;
-  color: #d1d5db;
-  font-size: 0.92rem;
-}
-
 .form-field {
   display: grid;
   gap: 0.35rem;
@@ -79,9 +70,42 @@
   box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
 }
 
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.75);
+}
+
+.modal-panel {
+  position: relative;
+  z-index: 1;
+  width: min(740px, 100%);
+  max-height: min(92vh, 1000px);
+  overflow: auto;
+  padding: 1.25rem;
+}
+
 @media (max-width: 480px) {
   .service-card,
-  .glass-card {
+  .glass-card,
+  .modal-panel {
     border-radius: 0.85rem;
+  }
+
+  .modal-panel {
+    padding: 1rem;
   }
 }

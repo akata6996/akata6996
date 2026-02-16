@@ -1,5 +1,9 @@
 const form = document.getElementById('appointment-form');
 const year = document.getElementById('year');
+const modal = document.getElementById('appointment-modal');
+const modalPanel = modal?.querySelector('.modal-panel');
+const openButtons = document.querySelectorAll('[data-open-appointment]');
+const closeButtons = document.querySelectorAll('[data-close-appointment]');
 
 if (year) {
   year.textContent = new Date().getFullYear();
@@ -12,6 +16,41 @@ if (window.AOS) {
     offset: 50,
   });
 }
+
+const openModal = () => {
+  if (!modal) {
+    return;
+  }
+
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  window.setTimeout(() => {
+    modalPanel?.focus();
+  }, 0);
+};
+
+const closeModal = () => {
+  if (!modal) {
+    return;
+  }
+
+  modal.classList.add('hidden');
+  document.body.style.overflow = '';
+};
+
+openButtons.forEach((button) => {
+  button.addEventListener('click', openModal);
+});
+
+closeButtons.forEach((button) => {
+  button.addEventListener('click', closeModal);
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
 
 form?.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -44,4 +83,5 @@ form?.addEventListener('submit', (event) => {
   );
 
   window.location.href = `mailto:mardamsignads@gmail.com?subject=${subject}&body=${body}`;
+  closeModal();
 });
