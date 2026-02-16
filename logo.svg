@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 340" role="img" aria-labelledby="title desc">
+  <title id="title">Mardam Sign Ads Logo</title>
+  <desc id="desc">Stylized Mardam Sign Ads wordmark with orange icon.</desc>
+  <defs>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff6148"/>
+      <stop offset="100%" stop-color="#ef3b2d"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.38"/>
+    </filter>
+  </defs>
+
+  <rect width="1100" height="340" fill="transparent"/>
+
+  <text x="10" y="145" font-family="Inter, Arial, sans-serif" font-size="150" font-weight="900" fill="url(#redGrad)" stroke="#ffffff" stroke-width="8" filter="url(#shadow)" letter-spacing="4">MARDAM</text>
+  <text x="165" y="275" font-family="Inter, Arial, sans-serif" font-size="130" font-weight="900" fill="#020817" stroke="#ffffff" stroke-width="7" filter="url(#shadow)" letter-spacing="2">SIGN ADS</text>
+
+  <g transform="translate(770 52)">
+    <path d="M0 40 L70 40 L95 0 L25 0 Z" fill="#020817" stroke="#ffffff" stroke-width="5"/>
+    <path d="M70 110 L138 110 L165 70 L98 70 Z" fill="#020817" stroke="#ffffff" stroke-width="5"/>
+    <path d="M35 110 L103 110 L130 70 L62 70 Z" fill="#020817" stroke="#ffffff" stroke-width="5"/>
+    <path d="M0 180 L68 180 L95 140 L27 140 Z" fill="#020817" stroke="#ffffff" stroke-width="5"/>
+  </g>
+
+  <g transform="translate(940 95)">
+    <path d="M48 28 C78 -10, 131 18, 126 75 C122 121, 86 163, 64 214 C52 242, 48 274, 48 296 C25 265, 9 223, 10 187 C11 142, 24 95, 48 28 Z" fill="#f6b322" stroke="#4b2e1f" stroke-width="5"/>
+    <path d="M48 28 C70 11, 107 18, 116 46 C108 44, 97 46, 86 52 C73 58, 60 70, 51 82 C43 88, 34 95, 26 99 C30 75, 37 50, 48 28 Z" fill="#ffd457" opacity="0.8"/>
+    <circle cx="80" cy="73" r="8" fill="#fff"/><circle cx="101" cy="69" r="8" fill="#fff"/>
+    <circle cx="80" cy="73" r="3.5" fill="#121212"/><circle cx="101" cy="69" r="3.5" fill="#121212"/>
+    <path d="M76 93 Q92 104 106 92" fill="none" stroke="#b1261e" stroke-width="4" stroke-linecap="round"/>
+    <path d="M12 145 Q-9 168 6 187 Q27 196 45 180" fill="#ecf2ff" stroke="#2d3a4f" stroke-width="4"/>
+    <path d="M127 118 Q154 126 162 151 Q156 173 131 179" fill="#ecf2ff" stroke="#2d3a4f" stroke-width="4"/>
+    <path d="M56 287 Q75 293 95 287" fill="none" stroke="#2d2018" stroke-width="6"/>
+  </g>
+</svg>
