@@ -43,6 +43,41 @@
   margin-top: 0.3rem;
 }
 
+.nav-link {
+  position: relative;
+  transition: color 180ms ease;
+}
+
+.nav-link:hover {
+  color: #67e8f9;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.35rem;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: linear-gradient(90deg, #ef4444, #f97316);
+  transition: transform 180ms ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.footer-link {
+  color: #cbd5e1;
+  transition: color 180ms ease;
+}
+
+.footer-link:hover {
+  color: #67e8f9;
+}
+
 .form-field {
   display: grid;
   gap: 0.35rem;
