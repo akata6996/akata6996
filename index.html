@@ -264,7 +264,7 @@
         <div class="mb-4 flex items-start justify-between gap-3">
           <div>
             <h2 id="appointment-modal-title" class="text-xl font-bold sm:text-2xl">Appointment Request</h2>
-            <p class="mt-1 text-sm text-slate-300">Fill out all details below and we'll open your email app addressed to <strong>mardamsignads@gmail.com</strong>.</p>
+            <p class="mt-1 text-sm text-slate-300">Fill out all details below and we'll send your request directly to <strong>mardamsignads@gmail.com</strong>.</p>
           </div>
           <button type="button" data-close-appointment class="rounded-lg border border-white/20 bg-white/5 px-3 py-1 text-sm hover:bg-white/10">Close</button>
         </div>
@@ -307,9 +307,10 @@
             <label class="form-field sm:col-span-2">
               Reference File (optional)
               <input type="file" name="referenceFile" accept=".jpg,.jpeg,.png,.pdf,.ai,.psd,.svg" />
-              <small class="text-xs text-slate-400">Selected filename will be added to the email draft. Attach the actual file in your email app before sending.</small>
+              <small class="text-xs text-slate-400">If provided, the file will be included with your appointment request.</small>
             </label>
           </div>
+          <p id="form-status" class="mt-4 hidden rounded-lg border px-3 py-2 text-sm" role="status" aria-live="polite"></p>
           <button type="submit" class="mt-5 w-full rounded-xl bg-gradient-to-r from-brand-red to-brand-orange px-5 py-3 font-semibold text-white shadow-glow transition hover:brightness-110">
             Send Appointment Email
           </button>
