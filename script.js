@@ -5,6 +5,8 @@ const modalPanel = modal?.querySelector('.modal-panel');
 const openButtons = document.querySelectorAll('[data-open-appointment]');
 const closeButtons = document.querySelectorAll('[data-close-appointment]');
 const formStatus = document.getElementById('form-status');
+const referenceFileInput = document.getElementById('reference-file');
+const removeAttachmentButton = document.getElementById('remove-attachment');
 
 if (year) {
   year.textContent = new Date().getFullYear();
@@ -51,6 +53,29 @@ const setFormStatus = (message, type) => {
   formStatus.className = `mt-4 rounded-lg border px-3 py-2 text-sm ${typeClasses[type] || typeClasses.pending}`;
   formStatus.textContent = message;
 };
+
+
+const updateRemoveAttachmentButton = () => {
+  if (!removeAttachmentButton || !referenceFileInput) {
+    return;
+  }
+
+  removeAttachmentButton.disabled = referenceFileInput.files.length === 0;
+};
+
+referenceFileInput?.addEventListener('change', updateRemoveAttachmentButton);
+
+removeAttachmentButton?.addEventListener('click', () => {
+  if (!referenceFileInput) {
+    return;
+  }
+
+  referenceFileInput.value = '';
+  updateRemoveAttachmentButton();
+  referenceFileInput.focus();
+});
+
+updateRemoveAttachmentButton();
 
 openButtons.forEach((button) => {
   button.addEventListener('click', openModal);
@@ -102,6 +127,7 @@ form?.addEventListener('submit', async (event) => {
 
     setFormStatus('Appointment request sent successfully. We will contact you soon.', 'success');
     form.reset();
+    updateRemoveAttachmentButton();
 
     window.setTimeout(() => {
       closeModal();
