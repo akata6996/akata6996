@@ -10,6 +10,7 @@
     />
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="theme-color" content="#0b1120" />
     <script>
       tailwind.config = {
         theme: {
@@ -71,6 +72,13 @@
           <a href="#contact" class="whitespace-nowrap rounded-full border border-white/15 bg-white/5 px-3 py-1.5">Contact</a>
         </div>
       </header>
+
+      <noscript>
+        <div class="mx-auto mt-6 w-[min(1200px,92vw)] rounded-xl border border-amber-300/30 bg-amber-300/10 px-4 py-3 text-sm text-amber-100">
+          JavaScript is disabled. The quick appointment form requires JavaScript. Please contact us directly via
+          <a href="mailto:mardamsignads@gmail.com" class="underline">email</a> or phone.
+        </div>
+      </noscript>
 
       <main id="top">
         <section class="mx-auto grid w-[min(1200px,92vw)] gap-12 py-12 md:grid-cols-2 md:items-center lg:py-20">
@@ -269,19 +277,19 @@
           <button type="button" data-close-appointment class="rounded-lg border border-white/20 bg-white/5 px-3 py-1 text-sm hover:bg-white/10">Close</button>
         </div>
 
-        <form id="appointment-form">
+        <form id="appointment-form" novalidate>
           <div class="grid gap-4 sm:grid-cols-2">
             <label class="form-field sm:col-span-2">
               Full Name
-              <input type="text" name="name" required placeholder="Your full name" />
+              <input type="text" name="name" required autocomplete="name" placeholder="Your full name" />
             </label>
             <label class="form-field">
               Email Address
-              <input type="email" name="email" required placeholder="you@example.com" />
+              <input type="email" name="email" required autocomplete="email" placeholder="you@example.com" />
             </label>
             <label class="form-field">
               Phone Number
-              <input type="tel" name="phone" required placeholder="09XX XXX XXXX" />
+              <input type="tel" name="phone" required inputmode="tel" autocomplete="tel" placeholder="09XX XXX XXXX" />
             </label>
             <label class="form-field sm:col-span-2">
               Service Needed
@@ -310,14 +318,20 @@
               <small class="text-xs text-slate-400">Selected filename will be added to the email draft. Attach the actual file in your email app before sending.</small>
             </label>
           </div>
-          <button type="submit" class="mt-5 w-full rounded-xl bg-gradient-to-r from-brand-red to-brand-orange px-5 py-3 font-semibold text-white shadow-glow transition hover:brightness-110">
-            Send Appointment Email
-          </button>
+          <div id="appointment-status" class="mt-4 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200" role="status" aria-live="polite"></div>
+          <div class="mt-5 grid gap-3 sm:grid-cols-2">
+            <button type="submit" class="w-full rounded-xl bg-gradient-to-r from-brand-red to-brand-orange px-5 py-3 font-semibold text-white shadow-glow transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60">
+              Send Appointment Email
+            </button>
+            <button id="send-whatsapp" type="button" class="w-full rounded-xl border border-emerald-300/40 bg-emerald-300/10 px-5 py-3 font-semibold text-emerald-200 transition hover:bg-emerald-300/20">
+              Send via WhatsApp
+            </button>
+          </div>
         </form>
       </div>
     </dialog>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
